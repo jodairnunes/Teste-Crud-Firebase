@@ -1,7 +1,8 @@
 <div class="container">
 	<!-- Contêiner principal para o layout do CRUD -->
 	<h1>Crud Angular e Firebase</h1> <!-- Título principal da aplicação -->
-  
+	<h1>Cadastro de Usuários</h1>
+
 	<div class="cadastrar">
 	  <!-- Seção de cadastro de um novo usuário -->
 	  <input type="text" placeholder="Nome ..." [(ngModel)]="name">
@@ -31,7 +32,7 @@
 	  </div>
 	</div>
   
-	<div *ngIf="isModalOpen" class="modal-overlay">
+	<div *ngIf="isModalOpen" class="modal-overlay modal">
 	  <!-- Modal exibido condicionalmente quando 'isModalOpen' for verdadeiro -->
 	  <div class="modal-content">
 		<!-- Conteúdo do modal -->
