@@ -4,6 +4,11 @@
 	flex-direction: column; /* Alinha os itens verticalmente */
 	align-items: center; /* Centraliza os itens horizontalmente */
 	justify-content: center; /* Centraliza os itens verticalmente */
+	text-align: center;
+	margin-top: 24px;
+	h1 {
+		margin: 16px 0px;
+	}
 }
 
 /* Estilo para a seção de cadastro */
@@ -42,7 +47,7 @@
 	width: 90%; /* Largura relativa */
 	max-width: 600px; /* Largura máxima */
 	display: grid; /* Configura como grid */
-	grid-template-columns: 1fr 3fr 1fr; /* Define a proporção das colunas */
+	grid-template-columns: 1fr 2fr 1fr; /* Define a proporção das colunas */
 	align-items: center; /* Alinha os itens verticalmente */
 	background-color: #f9f9f9; /* Fundo cinza claro */
 	padding: 10px; /* Espaçamento interno */
@@ -154,4 +159,16 @@ form input {
 	outline: none; /* Remove o contorno padrão */
 	border: 2px solid orange; /* Borda laranja */
 	border-radius: 8px; /* Borda arredondada */
+}
+
+@media screen and (max-width: 540px) {
+	.cadastrar {
+		flex-direction: column;
+		input {
+		width: 300px;
+		}
+		button {
+			width: 200px;
+		}
+	}
 }
