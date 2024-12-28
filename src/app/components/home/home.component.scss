@@ -1,0 +1,157 @@
+/* Estilo para o contêiner principal */
+.container {
+	display: flex; /* Define o contêiner como flexbox */
+	flex-direction: column; /* Alinha os itens verticalmente */
+	align-items: center; /* Centraliza os itens horizontalmente */
+	justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilo para a seção de cadastro */
+.cadastrar {
+	height: 100%; /* Define a altura como 100% */
+	display: flex; /* Configura como flexbox */
+	align-items: center; /* Alinha os itens verticalmente */
+	gap: 15px; /* Espaçamento entre os elementos */
+	margin-bottom: 24px; /* Espaçamento inferior */
+}
+
+.cadastrar input {
+	padding: 8px; /* Espaçamento interno */
+	font-size: 14px; /* Tamanho da fonte */
+	border: 1px solid #ccc; /* Borda cinza */
+	border-radius: 5px; /* Borda arredondada */
+}
+
+.cadastrar button {
+	padding: 8px 12px; /* Espaçamento interno */
+	font-size: 14px; /* Tamanho da fonte */
+	background-color: #4CAF50; /* Cor de fundo verde */
+	color: white; /* Texto branco */
+	border: none; /* Remove a borda */
+	border-radius: 5px; /* Borda arredondada */
+	cursor: pointer; /* Cursor de clique */
+	transition: background-color 0.3s; /* Animação de transição */
+}
+
+.cadastrar button:hover {
+	background-color: #45a049; /* Cor ao passar o mouse */
+}
+
+/* Estilo para a lista de usuários */
+.lista {
+	width: 90%; /* Largura relativa */
+	max-width: 600px; /* Largura máxima */
+	display: grid; /* Configura como grid */
+	grid-template-columns: 1fr 3fr 1fr; /* Define a proporção das colunas */
+	align-items: center; /* Alinha os itens verticalmente */
+	background-color: #f9f9f9; /* Fundo cinza claro */
+	padding: 10px; /* Espaçamento interno */
+	border: 1px solid #ddd; /* Borda fina cinza */
+	border-radius: 5px; /* Borda arredondada */
+}
+
+.lista span {
+	font-size: 14px; /* Tamanho da fonte */
+	color: #333; /* Cor do texto */
+}
+
+.lista-email {
+	display: flex; /* Configura como flexbox */
+	justify-content: center; /* Centraliza horizontalmente */
+	align-items: center; /* Centraliza verticalmente */
+}
+
+.lista-buttons {
+	display: flex; /* Configura como flexbox */
+	gap: 10px; /* Espaçamento entre botões */
+}
+
+/* Estilo para os botões da lista */
+.lista-buttons button {
+	padding: 6px 10px; /* Espaçamento interno */
+	font-size: 14px; /* Tamanho da fonte */
+	border: none; /* Remove a borda */
+	border-radius: 5px; /* Borda arredondada */
+	cursor: pointer; /* Cursor de clique */
+	transition: background-color 0.3s; /* Animação de transição */
+}
+
+.lista-buttons button:nth-child(1) {
+	background-color: #008CBA; /* Azul */
+	color: white; /* Texto branco */
+}
+
+.lista-buttons button:nth-child(1):hover {
+	background-color: #007B9A; /* Azul mais escuro ao passar o mouse */
+}
+
+.lista-buttons button:nth-child(2) {
+	background-color: #f44336; /* Vermelho */
+	color: white; /* Texto branco */
+}
+
+.lista-buttons button:nth-child(2):hover {
+	background-color: #d32f2f; /* Vermelho mais escuro ao passar o mouse */
+}
+
+/* Estilo para o modal */
+.modal {
+	position: fixed; /* Fixa o modal na tela */
+	top: 0; /* Posiciona no topo */
+	left: 0; /* Posiciona à esquerda */
+	width: 100%; /* Ocupa toda a largura */
+	height: 100%; /* Ocupa toda a altura */
+	background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+	display: flex; /* Configura como flexbox */
+	align-items: center; /* Centraliza verticalmente */
+	justify-content: center; /* Centraliza horizontalmente */
+	z-index: 1000; /* Garante que o modal fique acima de outros elementos */
+}
+
+.modal-content {
+	background-color: white; /* Fundo branco */
+	padding: 24px; /* Espaçamento interno */
+	border-radius: 10px; /* Borda arredondada */
+	width: 500px; /* Largura do modal */
+	max-width: 90%; /* Largura máxima relativa */
+}
+
+/* Botões no modal */
+.modal-buttons {
+	display: flex; /* Configura como flexbox */
+	justify-content: space-between; /* Distribui os botões igualmente */
+	margin-top: 24px; /* Espaçamento superior */
+}
+
+.modal-buttons button {
+	width: 200px; /* Largura fixa */
+	max-width: 80%; /* Largura máxima relativa */
+	padding: 8px 24px; /* Espaçamento interno */
+	border: none; /* Remove a borda */
+	background-color: #008CBA; /* Azul */
+	font-weight: bold; /* Texto em negrito */
+	border-radius: 12px; /* Borda arredondada */
+	cursor: pointer; /* Cursor de clique */
+}
+
+.modal-buttons button:hover {
+	color: white; /* Cor do texto ao passar o mouse */
+}
+
+.modal-buttons .delete {
+	background-color: rgb(250, 68, 68); /* Vermelho para o botão de exclusão */
+}
+
+/* Estilo do formulário no modal */
+form {
+	display: flex; /* Configura como flexbox */
+	flex-direction: column; /* Alinha os itens verticalmente */
+	gap: 10px; /* Espaçamento entre os elementos do formulário */
+}
+
+form input {
+	padding: 12px; /* Espaçamento interno */
+	outline: none; /* Remove o contorno padrão */
+	border: 2px solid orange; /* Borda laranja */
+	border-radius: 8px; /* Borda arredondada */
+}

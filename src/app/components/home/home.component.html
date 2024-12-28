@@ -1,0 +1,61 @@
+<div class="container">
+	<!-- Contêiner principal para o layout do CRUD -->
+	<h1>Crud Angular e Firebase</h1> <!-- Título principal da aplicação -->
+  
+	<div class="cadastrar">
+	  <!-- Seção de cadastro de um novo usuário -->
+	  <input type="text" placeholder="Nome ..." [(ngModel)]="name">
+	  <!-- Campo de entrada para o nome do usuário, vinculado ao modelo Angular -->
+	  <input type="text" placeholder="Email ..." [(ngModel)]="email">
+	  <!-- Campo de entrada para o email do usuário, vinculado ao modelo Angular -->
+	  <button (click)="criarUser(name, email)">Criar Usuário</button>
+	  <!-- Botão que chama o método 'criarUser' para adicionar um novo usuário -->
+	</div>
+  
+	<div *ngFor="let user of users" class="lista">
+	  <!-- Lista de usuários renderizada dinamicamente com base no array 'users' -->
+	  <div class="lista-name">
+		<!-- Exibe o nome do usuário -->
+		<span>{{ user.name }}</span>
+	  </div>
+	  <div class="lista-email">
+		<!-- Exibe o email do usuário -->
+		<span>{{ user.email }}</span>
+	  </div>
+	  <div class="lista-buttons">
+		<!-- Botões de ação para editar ou excluir um usuário -->
+		<button (click)="abrirModal(user)">Editar</button>
+		<!-- Botão que abre o modal de edição para o usuário selecionado -->
+		<button (click)="deletarUser(user.id)">Excluir</button>
+		<!-- Botão que chama o método 'deletarUser' para excluir o usuário pelo ID -->
+	  </div>
+	</div>
+  
+	<div *ngIf="isModalOpen" class="modal-overlay">
+	  <!-- Modal exibido condicionalmente quando 'isModalOpen' for verdadeiro -->
+	  <div class="modal-content">
+		<!-- Conteúdo do modal -->
+		<h2>Atualizar Usuário</h2> <!-- Título do modal -->
+  
+		<form (ngSubmit)="confirmarAtualizacao()">
+		  <!-- Formulário que chama 'confirmarAtualizacao' ao ser submetido -->
+		  <label for="name">Nome:</label>
+		  <input type="text" id="name" [(ngModel)]="selectedUser.name" name="name">
+		  <!-- Campo de entrada para atualizar o nome do usuário selecionado -->
+  
+		  <label for="email">Email:</label>
+		  <input type="email" id="email" [(ngModel)]="selectedUser.email" name="email">
+		  <!-- Campo de entrada para atualizar o email do usuário selecionado -->
+  
+		  <div class="modal-buttons">
+			<!-- Botões de ação no modal -->
+			<button type="submit">Atualizar</button>
+			<!-- Botão que confirma a atualização do usuário -->
+			<button type="button" (click)="fecharModal()" class="delete">Cancelar</button>
+			<!-- Botão que cancela a edição e fecha o modal -->
+		  </div>
+		</form>
+	  </div>
+	</div>
+  </div>
+  
