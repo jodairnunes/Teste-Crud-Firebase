@@ -84,13 +84,29 @@ export class HomeComponent implements OnInit {
   //   this.fecharModal();
   // }
 
-
   // Adiciona um novo usuário ao Firestore.
   criarUser(name: string, email: string) {
+    if (name.trim().length === 0) {
+      alert("O campo 'Nome' é obrigatório.");
+      return;
+    }
+    if (email.trim().length === 0) {
+      alert("O campo 'Email' é obrigatório.");
+      return;
+    }
+    if (!this.validarEmail(email)) {
+      alert('Por favor, insira um endereço de email válido.');
+      return;
+    }
     this.userService.criarUser(name, email); // Chama o método do serviço para criar o usuário.
     this.getUsers(); // Atualiza a lista de usuários.
     this.name = ''; // Limpa o campo de entrada do nome.
     this.email = ''; // Limpa o campo de entrada do email.
+  }
+  // Método para validar formato de email.
+  validarEmail(email: string): boolean {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
   }
 
   // Deleta um usuário do Firestore.
